@@ -314,14 +314,16 @@ class RssImportController extends AbstractPlugin
 
         $markerArray['###CLASS_DOWNLOAD###'] = $this->pi_classParam('download');
         if (isset($item['enclosure']['prop']['url']) && $item['enclosure']['prop']['url'] !== '') {
-            $download = $this->pi_getLL('Download');
-            if (isset($item['enclosure']['prop']['length'])) {
-                $download .= ' (' . round((float)$item['enclosure']['prop']['length'] / (1024 * 1024), 1) . ' MB)';
-            }
+            // do not build file download, as we only use the url as img src here
+            //$download = $this->pi_getLL('Download');
+            //if (isset($item['enclosure']['prop']['length'])) {
+            //    $download .= ' (' . round((float)$item['enclosure']['prop']['length'] / (1024 * 1024), 1) . ' MB)';
+            //}
             $markerArray['###DOWNLOAD###'] = sprintf(
-                '<a href="%s">%s</a>',
+                //'<a href="%s">%s</a>',
+                %s,
                 htmlspecialchars($item['enclosure']['prop']['url']),
-                htmlspecialchars($download)
+                //htmlspecialchars($download)
             );
         } else {
             $markerArray['###DOWNLOAD###'] = '';
