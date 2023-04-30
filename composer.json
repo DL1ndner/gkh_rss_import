@@ -1,5 +1,5 @@
 {
-    "name": "gkh/gkh-rss-import",
+    "name": "dl/gkh-rss-import",
     "type": "typo3-cms-extension",
     "description": "Fetch an RSS / Atom Feed and display its content on the Frontend.",
     "license": "GPL-2.0-or-later",
